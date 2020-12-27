@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Web Application</title>
+    </head>
+    <body>
+        <h2 class="h2">Liste des employées</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${employees.empty}">
+                    <td colspan="3">Aucun employée en base de données</td>
+                </tr>
+                <tr th:each="employee: ${employees}">
+                    <td><span th:text="${employee.firstName}"> Prénom </span></td>
+                    <td><span th:text="${employee.lastName}"> Nom </span></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
