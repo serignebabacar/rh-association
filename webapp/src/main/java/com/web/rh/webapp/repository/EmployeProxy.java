@@ -28,7 +28,7 @@ public class EmployeProxy {
 	public Iterable<Employe> getEmployes() {
 
 		String baseApiUrl = props.getApiUrl();
-		String getEmployesUrl = baseApiUrl + "/Employes";
+		String getEmployesUrl = baseApiUrl + "/employees";
 
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Iterable<Employe>> response = restTemplate.exchange(getEmployesUrl, HttpMethod.GET, null,

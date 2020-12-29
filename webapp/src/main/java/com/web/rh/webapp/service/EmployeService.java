@@ -7,23 +7,22 @@ import com.web.rh.webapp.model.Employe;
 import com.web.rh.webapp.repository.EmployeProxy;
 import lombok.Data;
 
-@Data
 @Service
 public class EmployeService {
 
     @Autowired
-    private EmployeProxy EmployeProxy;
+    private EmployeProxy employeProxy;
 
     public Employe getEmploye(final int id) {
-        return EmployeProxy.getEmploye(id);
+        return employeProxy.getEmploye(id);
     }
 
     public Iterable<Employe> getEmployes() {
-        return EmployeProxy.getEmployes();
+        return employeProxy.getEmployes();
     }
 
     public void deleteEmploye(final int id) {
-        EmployeProxy.deleteEmploye(id);;
+        employeProxy.deleteEmploye(id);;
     }
 
      public Employe saveEmploye(Employe employe) {
@@ -34,9 +33,9 @@ public class EmployeService {
 
         if(employe.getId() == null) {
             // Si l'id est nul, alors c'est un nouvel employé.
-            savedEmploye = EmployeProxy.createEmploye(employe);
+            savedEmploye = employeProxy.createEmploye(employe);
         } else {
-            savedEmploye = EmployeProxy.updateEmploye(employe);
+            savedEmploye = employeProxy.updateEmploye(employe);
         }
     
         return savedEmploye;

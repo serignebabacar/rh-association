@@ -21,7 +21,7 @@ public class EmployeControllerTest {
 	}
 	@Test
 	public void testDeleteEmployes() throws Exception{
-			mockMvc.perform(get("/employees")).andExpect(status().isOk()).andExpect(jsonPath("$[0].firstName", is("Laurent")));
+			mockMvc.perform(get("/employees")).andExpect(status().isOk()).andExpect(jsonPath("$[1].firstName", is("Sophie")));
 	}
 	
 	
