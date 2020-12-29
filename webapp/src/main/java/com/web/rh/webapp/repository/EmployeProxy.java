@@ -47,7 +47,7 @@ public class EmployeProxy {
 	 */
 	public Employe getEmploye(int id) {
 		String baseApiUrl = props.getApiUrl();
-		String getEmployeUrl = baseApiUrl + "/Employe/" + id;
+		String getEmployeUrl = baseApiUrl + "/employee/" + id;
 
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Employe> response = restTemplate.exchange(getEmployeUrl, HttpMethod.GET, null, Employe.class);
@@ -63,7 +63,7 @@ public class EmployeProxy {
 	 */
 	public Employe createEmploye(Employe e) {
 		String baseApiUrl = props.getApiUrl();
-		String createEmployeUrl = baseApiUrl + "/Employe";
+		String createEmployeUrl = baseApiUrl + "/employee";
 
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<Employe> request = new HttpEntity<Employe>(e);
@@ -80,7 +80,7 @@ public class EmployeProxy {
 	 */
 	public Employe updateEmploye(Employe e) {
 		String baseApiUrl = props.getApiUrl();
-		String updateEmployeUrl = baseApiUrl + "/Employe/" + e.getId();
+		String updateEmployeUrl = baseApiUrl + "/employee/" + e.getId();
 
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<Employe> request = new HttpEntity<Employe>(e);
@@ -98,7 +98,7 @@ public class EmployeProxy {
 	 */
 	public void deleteEmploye(int id) {
 		String baseApiUrl = props.getApiUrl();
-		String deleteEmployeUrl = baseApiUrl + "/Employe/" + id;
+		String deleteEmployeUrl = baseApiUrl + "/employee/" + id;
 
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Void> response = restTemplate.exchange(deleteEmployeUrl, HttpMethod.DELETE, null, Void.class);
